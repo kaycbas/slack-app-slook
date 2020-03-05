@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 // const ejs = require("ejs");
 
-mongoose.connect("credentials.mongodb.URI || mongodb://localhost:27017/slookDB", { useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect("credentials.mongodb.URI || mongodb://localhost:27017/slookDB", { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://kaycbas:mJuChEr94@ds137102.mlab.com:37102/heroku_ffl3g89w");
+
 
 const app = express();
 
