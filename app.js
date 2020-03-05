@@ -23,6 +23,27 @@ app.get("/", (req, res) => {
 
 
 
+const fruitSchema = new mongoose.Schema ({
+  name: {
+    type: String,
+    required: [true, "Name required."]
+  },
+  rating: {
+    type: Number,
+    min: 1,
+    max: 10
+  },
+  review: String
+});
 
+const Fruit = mongoose.model("Fruit", fruitSchema);
+
+const dragonFruit = new Fruit ({
+  name: "Dragon Fruit",
+  rating: 7,
+  review: "Kind of mysterious."
+});
+
+dragonFruit.save();
 
 module.exports = app;
