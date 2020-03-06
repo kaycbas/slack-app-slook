@@ -1,6 +1,6 @@
-console.log(`Your port is ${process.env.PORT}`); // undefined
+console.log(`Your user is ${process.env.DB_USER_TEST}`); // undefined
 require('dotenv').config();
-console.log(`Your port is ${process.env.PORT}`); // 8626
+console.log(`Your user is ${process.env.DB_USER_TEST}`); // kaycbas
 
 const express = require("express");
 const bodyParser = require("body-parser");
