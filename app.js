@@ -18,8 +18,6 @@ const port = process.env.PORT || 3000;
 app.listen(port);
 
 
-
-
 app.get("/", (req, res) => {
   res.send("Hello World!\n");
 });
@@ -83,6 +81,5 @@ const apple = new Fruit ({
 });
 
 //apple.save();
-
 
 module.exports = app;
