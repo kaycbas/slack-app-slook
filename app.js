@@ -1,4 +1,7 @@
+console.log(`Your port is ${process.env.PORT}`); // undefined
 require('dotenv').config();
+console.log(`Your port is ${process.env.PORT}`); // 8626
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require('https');
