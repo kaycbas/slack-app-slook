@@ -11,7 +11,7 @@ const SlackBot = require('slackbots');
 const mongoose = require('mongoose');
 // const ejs = require("ejs");
 
-mongoose.connect("mongodb://kaycbas:mJuChEr94@ds137102.mlab.com:37102/heroku_ffl3g89w", { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/slack-app-slook', { useUnifiedTopology: true, useNewUrlParser: true });
 
 
 const app = express();
