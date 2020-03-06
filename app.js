@@ -62,7 +62,8 @@ const fruitSchema = new mongoose.Schema ({
     max: 10
   },
   review: String
-});
+},
+{ collection : 'Fruits' });
 
 const Fruit = mongoose.model("Fruit", fruitSchema);
 
