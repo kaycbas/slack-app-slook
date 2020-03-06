@@ -1,7 +1,3 @@
-console.log(`Your user is ${process.env.DB_USER_TEST}`); // undefined
-require('dotenv').config();
-console.log(`Your user is ${process.env.DB_USER_TEST}`); // kaycbas
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require('https');
@@ -13,7 +9,6 @@ const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/slack-app-slook', { useUnifiedTopology: true, useNewUrlParser: true });
 
-
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -21,6 +16,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 const port = process.env.PORT || 3000;
 
 app.listen(port);
+
+
 
 
 app.get("/", (req, res) => {
@@ -52,6 +49,39 @@ app.get('/auth', (req, res) =>{
 //         }
 //     })
 // })
+
+// MongoDB test section
+const fruitSchema = new mongoose.Schema ({
+  name: {
+    type: String,
+    required: [true, "Name required."]
+  },
+  rating: {
+    type: Number,
+    min: 1,
+    max: 10
+  },
+  review: String
+});
+
+const Fruit = mongoose.model("Fruit", fruitSchema);
+
+Fruit.find((err, fruits) => {
+  if (err) {
+    console.log(err);
+  } else {
+    //mongoose.connection.close();
+    console.log(fruits);
+  }
+});
+
+const apple = new Fruit ({
+  name: "Apple",
+  rating: 8,
+  review: "Basic."
+});
+
+apple.save();
 
 
 module.exports = app;
