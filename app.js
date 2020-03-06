@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
+const https = require('https');
+const request = require('request')
 const mongoose = require('mongoose');
 // const ejs = require("ejs");
 
@@ -19,33 +21,28 @@ app.listen(port);
 //console.log("Hello World!");
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.write("Hello World!");
+
+  request.post('https://hooks.slack.com/services/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', {
+    json: {
+      todo: 'Buy the milk'
+    }
+  }, (error, res, body) => {
+    if (error) {
+      console.error(error)
+      return
+    }
+    console.log(`statusCode: ${res.statusCode}`)
+    console.log(body)
+  });
+
+  res.write("Hello World 2!");
+  res.send();
 });
 
 
 
 
-const fruitSchema = new mongoose.Schema ({
-  name: {
-    type: String,
-    required: [true, "Name required."]
-  },
-  rating: {
-    type: Number,
-    min: 1,
-    max: 10
-  },
-  review: String
-});
 
-const Fruit = mongoose.model("Fruit", fruitSchema);
-
-const dragonFruit = new Fruit ({
-  name: "Dragon Fruit",
-  rating: 7,
-  review: "Kind of mysterious."
-});
-
-dragonFruit.save();
 
 module.exports = app;
