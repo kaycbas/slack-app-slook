@@ -19,7 +19,7 @@ app.listen(port);
 
 
 app.get("/", (req, res) => {
-  res.send("Hello World!\n");
+  res.send("<h1>Hello World!</h1>");
 });
 
 
