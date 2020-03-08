@@ -1,0 +1,19 @@
+Slook home tab:
+1. Add Slook app
+2. Creates private Slook channel, Slook bot intro, presents Slook control panel, provides an easy way to ask about team interest
+3. Create private Slook channel, invite people
+
+Within a Slook channel:
+1. Intro and overview of book club (maybe a CoC or info tab)
+2. Admin creates book voting thread with timeline (using slash commands)
+3. Members post books with brief descriptions
+4. Everyone can vote on these books, anonymously
+5. At deadline, highest voted book is revealed
+6. Admin creates 'schedule post' that breaks down the timeline of reading the book
+7. At the start of each milestone, Slook bot creates a discussion thread for that milestone
+8. Members can post in this discussion thread as they reading
+9. (optional feature) Slook bot can help organize a Zoom / Slack video call at the conclusion of a milestone to have a realtime discussion
+10. When a milestone is up, Slook bot will create a new thread for the next milestone
+11. Slook bot will continue to create milestones until the book is complete
+12. When the last milestone is complete, Slook bot will say congrats and provide a list of possible next actions
+13. start a new book through vote, provide a way to summarize and download the notes discussed
